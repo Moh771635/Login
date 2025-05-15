@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تسجيل الدخول</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      padding: 20px;
+    }
+    form {
+      max-width: 320px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      direction: rtl;
+      text-align: right;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      font-size: 18px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <form id="loginForm">
+    <h2>تسجيل الدخول</h2>
+    <input type="text" id="user" placeholder="اسم المستخدم" required />
+    <input type="password" id="password" placeholder="كلمة المرور" required />
+    <button type="submit">دخول</button>
+  </form>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const user = document.getElementById('user').value;
+      const password = document.getElementById('password').value;
+
+      // تحقق بسيط، عدّل حسب بياناتك
+      if(user === "admin" && password === "1234") {
+        // عند النجاح، توجه للرابط الذي تريد
+        window.location.href = "https://nexus-call-nine.vercel.app/";
+      } else {
+        alert("بيانات الدخول غير صحيحة!");
+      }
+    });
+  </script>
+</body>
+</html>
